@@ -5,7 +5,7 @@
     --secondary-color: #98D7C2;
     --third-color: #167D7F;
     --confirm-color: #04AA6D;
-    --detail-color:#29A0B1;
+    --detail-color:#0B0B45;
 }
 
 * {
@@ -18,6 +18,7 @@ body {
     background-color: var(--main-bg-color);
     color: var(--main-standard-color-dark);
     min-height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 header {
