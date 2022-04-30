@@ -114,19 +114,15 @@ function deleteCheck(event) {
     if (item.classList[0] === "checked-item") {   
         if(market.classList.value === "market"){
             let itemPrice = window.prompt("Digite o valor do produto")
-            if(itemPrice.includes(',')){
+            if(itemPrice != null || itemPrice.includes(',') || !itemPrice.match("[0-9]+(\.[0-9][0-9]?)?")){
                 event.target.checked = false
-                throw alert("Campo não pode ter vírgulas, apenas ponto e números.")
+                throw alert("Campo pode ter apenas ponto e números.")
             }
-            if(itemPrice != null && itemPrice.match("[0-9]+(\.[0-9][0-9]?)?")){
+            else{
                 var markedItem = [getValueTagLi, itemPrice]
                 saveLocalMarketPrices(markedItem)
                 changeStateMarketItem(getValueTagLi)
                 market.classList.toggle('completed');
-            }
-            else{
-                alert("Permitido somente números");
-                event.target.checked = false
             }
         }
         else{
