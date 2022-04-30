@@ -59,7 +59,7 @@ function addMarket(event){
 
     // Botão de lixeira
     const trashButton = document.createElement('button');
-    trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+    trashButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
     trashButton.classList.add('trash-btn');
     marketDiv.appendChild(trashButton)
 
@@ -114,11 +114,12 @@ function deleteCheck(event) {
     if (item.classList[0] === "checked-item") {   
         if(market.classList.value === "market"){
             let itemPrice = window.prompt("Digite o valor do produto")
-            if(itemPrice != null || itemPrice.includes(',') || !itemPrice.match("[0-9]+(\.[0-9][0-9]?)?")){
+            if(itemPrice == null || itemPrice.includes(',') || !itemPrice.match("[0-9]+(\.[0-9][0-9]?)?")){
                 event.target.checked = false
-                throw alert("Campo pode ter apenas ponto e números.")
+                alert("Campo pode ter apenas ponto e números.")
             }
             else{
+                console.log(itemPrice)
                 var markedItem = [getValueTagLi, itemPrice]
                 saveLocalMarketPrices(markedItem)
                 changeStateMarketItem(getValueTagLi)
@@ -207,7 +208,7 @@ function getMarketItems(){
     
     // Cria botão lixo
     const trashButton = document.createElement('button');
-    trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+    trashButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
     trashButton.classList.add('trash-btn');
     marketDiv.appendChild(trashButton)
 
@@ -226,7 +227,6 @@ function saveLocalMarketPrices(markedItem){
     } else {
         marketPrice = JSON.parse(localStorage.getItem('marketPrice'));
     }
-
     // Adicionando nosso item ao array marketItems e salvando no localStorage
     marketPrice.push(markedItem);
     localStorage.setItem('marketPrice', JSON.stringify(marketPrice));
@@ -300,7 +300,6 @@ function filterMarket(event){
             case "all":
                 item.style.display = "flex"
                 break
-            
             case "bought":
                 if(item.classList.contains("completed")){
                     item.style.display = "flex"
