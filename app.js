@@ -65,10 +65,7 @@ function addMarket(event){
 
     // Append to list
     marketList.appendChild(marketDiv);
-    
-    // numberOfItems = Number(numberOfItems) + 1
-    // totalItems.innerHTML = numberOfItems
-
+ 
     // Clear Todo Input Value
     marketInput.value = '';
 
@@ -103,9 +100,6 @@ function deleteCheck(event) {
         removeLocalMarket(getValueTagLi)
         
         removeLocalMarketprices(getValueTagLi)
-        
-        // numberOfItems = Number(numberOfItems) - 1
-        // totalItems.innerHTML = numberOfItems
 
         market.remove()
     }
