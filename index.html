@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="./style.css">
-        <!----- Font awesome ----->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!----- Font awesome ----->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-        <!----- Favicon ------>
-        <link rel="icon" type="image/x-icon" href="supermercado.png">
+    <!----- Favicon ------>
+    <link rel="icon" type="image/x-icon" href="assets/img/img.png" />
 
-        <script src="./app.js" defer></script>
-        
-        <title>Lista de Compras</title>
-    </head>
-    <body>
-        <div class="dark-mode">
-            <abbr title="Mudar modo de visualização"><i class="fa-solid fa-moon" onclick="changeLightMode()"></i></abbr>
+    <script src="assets/scripts/app.js" defer></script>
+
+    <title>Lista de Compras</title>
+  </head>
+  <body>
+    <div class="dark-mode">
+      <abbr title="Mudar modo de visualização"
+        ><i class="fa-solid fa-moon" onclick="changeLightMode()"></i
+      ></abbr>
+    </div>
+    <div class="header">
+      <p><i class="fa-solid fa-basket-shopping"> </i></p>
+      <h1>Minha Lista de Compras</h1>
+    </div>
+
+    <div class="content-container">
+      <form class="">
+        <div class="fake-input-field">
+          <input
+            type="text"
+            id="market-input"
+            placeholder="Insira um item"
+            required
+          />
+          <button id="market-button" type="submit">
+            <i class="fa-solid fa-cart-plus"></i>
+          </button>
         </div>
-        <header>
-            <i class="fa-solid fa-basket-shopping"> </i>
-            <h1> Minha Lista de Compras</h1>
-        </header>
-        
-        <div class="content-container">
-            <form>
-                <div class="fake-input-field">
-                    <input type="text" id="market-input" placeholder="Insira um item" required/>
-                    <button id="market-button" type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                </div>
-                    <select name="markets" class="filter-market">
-                        <option value="all">Todos</option>
-                        <option value="bought">Comprados</option>
-                        <option value="Not bought">Pendentes</option>
-                    </select>
-            </form>
-            <div class="result">
-                <h2>O número total de itens é: <span id="total-items"></span></h2>
-                <div class="total-price-class">
-                    <h2>O valor total é: <div id="total-price"></div></h2>
-                </div>
-            </div>
+        <select name="markets" class="filter-market">
+          <option value="all">Todos</option>
+          <option value="bought">Comprados</option>
+          <option value="Not bought">Pendentes</option>
+        </select>
+      </form>
+      <div class="result">
+        <h2>O número total de itens é: <span id="total-items"></span></h2>
+        <div class="total-price-class">
+          <h2>
+            O valor total é:
+            <div id="total-price"></div>
+          </h2>
         </div>
-            <div class="market-container">
-                <ul class="market-list"></ul>
-            </div>
-    </body>
+      </div>
+    </div>
+    <div class="market-container">
+      <ul class="market-list"></ul>
+    </div>
+  </body>
 </html>
